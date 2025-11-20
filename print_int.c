@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * print_number - prints a positive long number
+ * print_number - prints a positive number (recursive)
  * @n: number to print
  *
  * Return: number of characters printed
  */
-static int print_number(long n)
+static int print_number(unsigned long n)
 {
     int count = 0;
 
@@ -18,22 +18,26 @@ static int print_number(long n)
 }
 
 /**
- * print_int - prints a signed integer
+ * print_int - prints a signed integer (%d and %i)
  * @ap: argument list
  *
  * Return: number of characters printed
  */
 int print_int(va_list ap)
 {
-    long n = va_arg(ap, int);
+    int n = va_arg(ap, int);
+    unsigned long num;
     int count = 0;
+    long ln = n;
 
-    if (n < 0)
+    if (ln < 0)
     {
         count += _putchar('-');
-        n = -n;
+        ln = -ln;
     }
 
-    count += print_number(n);
+    num = (unsigned long)ln;
+    count += print_number(num);
+
     return (count);
 }
