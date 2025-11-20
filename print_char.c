@@ -1,16 +1,12 @@
 #include "main.h"
 
 /**
- * print_char - prints a character
- * @ap: argument list
+ * _putchar - writes a character to stdout
+ * @c: character to print
  *
- * Return: number of characters printed
+ * Return: 1 on success, -1 on error
  */
-int print_char(va_list ap)
+int _putchar(char c)
 {
-    char c;
-
-    c = (char)va_arg(ap, int);
-    _putchar(c);
-    return (1);
+    return (write(1, &c, 1));
 }
