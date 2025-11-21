@@ -8,6 +8,17 @@ _printf \- formatted output conversion
 .BI "int _printf(const char *" format ", ...);"
 
 .SH DESCRIPTION
+_Brief description here..._
+.TH _PRINTF 3 "November 2025" "Holberton School" "Library Functions Manual"
+.SH NAME
+_printf \- formatted output conversion
+
+.SH SYNOPSIS
+.B #include "main.h"
+.PP
+.BI "int _printf(const char *" format ", ...);"
+
+.SH DESCRIPTION
 .B _printf
 produces output according to a format string and a variable number of arguments.
 It writes the output to the standard output (file descriptor 1).
