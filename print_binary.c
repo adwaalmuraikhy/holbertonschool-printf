@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_binary - prints an unsigned int in binary
+ * print_binary - prints an unsigned int in binary (%b)
  * @ap: argument list
  *
  * Return: number of characters printed, or -1 on error
@@ -10,7 +10,7 @@ int print_binary(va_list ap)
 {
 	unsigned int n = va_arg(ap, unsigned int);
 	char buf[32];
-	int i = 0, count = 0;
+	int i = 0, j, count = 0;
 
 	if (n == 0)
 	{
@@ -19,18 +19,15 @@ int print_binary(va_list ap)
 		return (1);
 	}
 
-	/* store bits in reverse order */
 	while (n > 0)
 	{
 		buf[i++] = (n & 1) ? '1' : '0';
 		n >>= 1;
 	}
 
-	/* print from last to first */
-	while (i > 0)
+	for (j = i - 1; j >= 0; j--)
 	{
-		i--;
-		if (_putchar(buf[i]) == -1)
+		if (_putchar(buf[j]) == -1)
 			return (-1);
 		count++;
 	}
