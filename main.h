@@ -20,6 +20,7 @@ int _printf(const char *format, ...);
 int print_char(va_list ap);
 int print_string(va_list ap);
 int print_int(va_list ap);
+int print_binary(va_list ap);              /* NEW */
 int print_unsigned(unsigned long int n);
 
 #endif /* MAIN_H */
